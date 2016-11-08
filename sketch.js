@@ -2,7 +2,7 @@ var properties;
 var rowCount;
 
 function preload(){
-  properties = loadTable("propinfoshort.csv", "header");
+  properties = loadTable("propinfo.csv", "header");
 }
 
 function setup(){
@@ -20,10 +20,10 @@ function setup(){
     var acres = properties.getNum(i, "LOT AREA MEASUREMENT");
     setXY(latitude, longitude);
       if (acres > 0 && acres < 1){
-        fill(72, 255, 248);
+        fill(255);
       };
       if (acres > 1 && acres < 5){
-        fill(64, 229, 223);
+        fill(72, 255, 248);
       };
       if (acres > 5 && acres < 30){
         fill(54, 191, 186);
@@ -49,15 +49,15 @@ function setup(){
 function draw(){
   // scale(1.9);
   // translate(width/2-250, height/2+250);
-  // rotate(radians(270));
+  // rotate(radians(180));
 
 
 
 }
 
 function setXY(lat, lng){
-  println(lat, lng);
-  var x = map(lat, -96, -88, 0, height);
-  var y = map(lng, 29, 34, 0, width);
-  ellipse(x, y, 0.25);
+  // println(lat, lng);
+  var y = map(lat, 31, 30, 0, height);
+  var x = map(lng, -92, -90, 0, width);
+  ellipse(x, y, 2);
 }
